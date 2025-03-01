@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 5.0 (Python 3.11.5 on darwin)" generated="20250302 00:46:56.662" rpa="false" schemaversion="3">
+<suite id="s1" name="Todo" source="/Users/arisasoheng/Documents/GitHub/automation-mobile/testcases/todo.robot">
+<test id="s1-t1" name="TC_01_Verify create the todo list without remainder successfully" line="6">
+<kw name="Open Test Application" library="todo.feature">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${URL}</arg>
+<arg>platformName=${PLATFORM}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP_LOCATION}</arg>
+<arg>automationName=appium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20250302 00:46:56.412" level="INFO">Could not connect to port 4725 on host 127.0.0.1</msg>
+<msg timestamp="20250302 00:46:56.412" level="INFO">Could not get IP address for host: 127.0.0.1</msg>
+<msg timestamp="20250302 00:46:56.412" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x106364f50&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20250302 00:46:56.412" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x106318dd0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20250302 00:46:56.413" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1063184d0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /wd/hub/session</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20250302 00:46:56.413" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20250302 00:46:56.413" endtime="20250302 00:46:56.420"/>
+</kw>
+<msg timestamp="20250302 00:46:56.421" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20250302 00:46:56.421" level="INFO">Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/arisasoheng/Documents/GitHub/automation-mobile/testcases/todo.robot:6
+    T:  TC_01_Verify create the todo list without remainder successfully    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/arisasoheng/Documents/GitHub/automation-mobile/testcases/todo.robot:9
+      Open Test Application    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/arisasoheng/Documents/GitHub/automation-mobile/keywords/todo.feature.robot:10
+      Open Application    ${URL}    platformName=${PLATFORM}    platformVersion=${ANDROID_PLATFORM_VERSION}    deviceName=${DEVICE_NAME}    app=${APP_LOCATION}    automationName=appium
+      |  ${URL} = http://127.0.0.1:4725/wd/hub (str)
+      |  platformName=${PLATFORM} = platformName=Android (str)
+      |  platformVersion=${ANDROID_PLATFORM_VERSION} = platformVersion=12 (str)
+      |  deviceName=${DEVICE_NAME} = deviceName=emulator-5554 (str)
+      |  app=${APP_LOCATION} = app=/Users/arisasoheng/Documents/GitHub/automation-mobile/resources/App/app-release.apk (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  None:0
+      Capture Page Screenshot    
+______________________________________________________________________________</msg>
+<msg timestamp="20250302 00:46:56.421" level="FAIL">MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=4725): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x107a55e10&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<status status="FAIL" starttime="20250302 00:46:56.410" endtime="20250302 00:46:56.422"/>
+</kw>
+<status status="FAIL" starttime="20250302 00:46:56.410" endtime="20250302 00:46:56.422"/>
+</kw>
+<kw name="Verify List Page Before Add The Record" library="todo.feature">
+<status status="NOT RUN" starttime="20250302 00:46:56.422" endtime="20250302 00:46:56.422"/>
+</kw>
+<kw name="Click Create Button" library="todo.feature">
+<status status="NOT RUN" starttime="20250302 00:46:56.422" endtime="20250302 00:46:56.422"/>
+</kw>
+<kw name="Verify Add List Page" library="todo.feature">
+<status status="NOT RUN" starttime="20250302 00:46:56.422" endtime="20250302 00:46:56.422"/>
+</kw>
+<kw name="Enter The Todo" library="todo.feature">
+<arg>Todo1</arg>
+<status status="NOT RUN" starttime="20250302 00:46:56.422" endtime="20250302 00:46:56.422"/>
+</kw>
+<kw name="Click The Next Button" library="todo.feature">
+<status status="NOT RUN" starttime="20250302 00:46:56.422" endtime="20250302 00:46:56.422"/>
+</kw>
+<kw name="Verify List Page After Add The Todo List" library="todo.feature">
+<status status="NOT RUN" starttime="20250302 00:46:56.423" endtime="20250302 00:46:56.423"/>
+</kw>
+<doc>To verify the application can create todo List succesfully</doc>
+<tag>sarai</tag>
+<status status="FAIL" starttime="20250302 00:46:56.410" endtime="20250302 00:46:56.423">MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=4725): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x107a55e10&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</test>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 1 executions.</doc>
+<status status="FAIL" starttime="20250302 00:46:56.334" endtime="20250302 00:46:56.423"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">sarai</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Todo">Todo</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250302 00:46:56.412" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x106364f50&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20250302 00:46:56.412" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x106318dd0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20250302 00:46:56.413" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1063184d0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20250302 00:46:56.421" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
