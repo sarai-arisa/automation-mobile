@@ -2,9 +2,9 @@
 ${ANDROID_AUTOMATION_NAME}    uiautomator2
 ${APP_LOCATION}                 ${CURDIR}/App/app-release.apk
 ${PLATFORM}      Android
-${ANDROID_PLATFORM_VERSION}   12
+${ANDROID_PLATFORM_VERSION}   13
 ${DEVICE_NAME}      emulator-5554
-${URL}      http://127.0.0.1:4725/wd/hub
+${URL}      http://127.0.0.1:4723/wd/hub
 
 #element locators on list page
 ${txt_title}     xpath=//android.view.ViewGroup[1]/android.widget.TextView
@@ -22,6 +22,8 @@ ${btn_setting_selection}      xpath=//android.widget.LinearLayout[{index_and}]/a
 #element locators on add page
 ${txt_title_add_todo}       com.avjindersinghsekhon.minimaltodo:id/toDoCustomTextInput
 ${txt_box_title}        com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+	
+${txt_box_value}    com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview    
 ${btn_next}     com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton
 ${tgg_remind}       	com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat
 ${txt_reminder}     com.avjindersinghsekhon.minimaltodo:id/newToDoDateTimeReminderTextView

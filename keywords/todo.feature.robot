@@ -2,13 +2,27 @@
 Library    AppiumLibrary
 Library    String
 Library    DateTime
+Library    pabot.PabotLib
 
 Resource    ../resources/locators.robot
 
 *** Keywords ***
-Open Test Application
-    Open Application    ${URL}   platformName=${PLATFORM}    platformVersion=${ANDROID_PLATFORM_VERSION}
-    ...     deviceName=${DEVICE_NAME}    app=${APP_LOCATION}    automationName=appium
+
+
+
+Open App On Android
+    [Arguments]    ${platformVersion}    ${platformName}    ${automationName}    ${deviceName}   ${url}    ${APP_LOCATION} 
+    Open Application    remote_url=${url}   
+    ...  platformVersion=${platformVersion}
+    ...  platformName=${platformName}
+    ...  automationName=${automationName}
+    ...  noReset=false  
+    ...  fullReset=false
+    ...  deviceName=${deviceName}
+    ...  app=${APP_LOCATION} 
+    ...  autoGrantPermissions=true
+    ...  isHeadless=false
+
 
 Click Create Button
     Click Element       ${btn_add}
@@ -16,12 +30,18 @@ Click Create Button
 Enter The Todo
     [Arguments]    ${text_input}
     Input Text    ${txt_box_title}    ${text_input}
-
+Edit The Todo
+    [Arguments]    ${text_input}
+    Input Text    ${txt_box_title}    ${text_input}
 Click The Next Button
     Click Element       ${btn_next}
 
 Click Remainder Toggle
     Click Element       ${tgg_remind}
+
+Click The Todo List
+    Wait Until Element Is Visible    ${txt_box_value}
+    Click Element       ${txt_box_value}
 
 Select The Next Day
     ${date_time}        Get Current Date    result_format=datetime
@@ -37,7 +57,7 @@ Select The Next Day
 Select The Previous Day
     ${date_time}        Get Current Date    result_format=datetime
     ${datetime}=    Convert Date    ${date_time}    result_format=%Y-%m-%d %H:%M:%S
-    ${date}    Subtract Time From Date    ${datetime}    2 days     result_format=%d %B %Y
+    ${date}    Subtract Time From Date    ${datetime}    1 days     result_format=%d %B %Y
     log     ${date}
     ${locator_selected_date} = 	Replace String      ${selected_date}       {date_and}     ${date}
     Click Element       ${txt_box_date}
@@ -75,8 +95,14 @@ Verify Add List Page
 
 Verify List Page After Add The Todo List
     Wait Until Element Is Visible       ${txt_title}        15
-    ${actual_txt_value_to_do}        Get Text          ${txt_box_title} 
-    Should Be Equal      ${actual_txt_value_to_do}      TestCreate
+    ${actual_txt_value_to_do}        Get Text          ${txt_box_value}
+    Should Be Equal      ${actual_txt_value_to_do}      Todo1
+
+Verify List Page After Edit The Todo List
+    [Arguments]    ${value}
+    Wait Until Element Is Visible       ${txt_title}        15
+    ${actual_txt_value_to_do}        Get Text          ${txt_box_value}
+    Should Be Equal      ${actual_txt_value_to_do}      ${value}
 
 
 Verify List Page Before Add The Record

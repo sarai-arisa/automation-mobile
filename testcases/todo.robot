@@ -5,8 +5,14 @@ Resource    ../keywords/todo.feature.robot
 *** Test Cases ***
 TC_01_Verify create the todo list without remainder successfully
     [Documentation]    To verify the application can create todo List succesfully
-    [Tags]    sarai
-    Open Test Application
+    [Tags]    assignment
+    Open App On Android
+    ...    ${ANDROID_PLATFORM_VERSION}
+    ...    ${PLATFORM}
+    ...    ${ANDROID_AUTOMATION_NAME}
+    ...    ${DEVICE_NAME}
+    ...    ${URL}
+    ...    ${APP_LOCATION}
     Verify List Page Before Add The Record
     Click Create Button
     Verify Add List Page
@@ -15,13 +21,19 @@ TC_01_Verify create the todo list without remainder successfully
     Verify List Page After Add The Todo List
 
 TC_02_Verify create the todo list with remainder successfully
-    # [Tags]    Test
+    [Tags]    assignment
     [Documentation]    To verify the application can create todo task succesfully
-    Open Test Application
+    Open App On Android
+    ...    ${ANDROID_PLATFORM_VERSION}
+    ...    ${PLATFORM}
+    ...    ${ANDROID_AUTOMATION_NAME}
+    ...    ${DEVICE_NAME}
+    ...    ${URL}
+    ...    ${APP_LOCATION}
     Verify List Page Before Add The Record
     Click Create Button
     Verify Add List Page
-    Enter The Todo    Todo2
+    Enter The Todo    Todo1
     Click Remainder Toggle
     Verify After Adding Page After Toggle Is On
     Select The Next Day
@@ -29,27 +41,42 @@ TC_02_Verify create the todo list with remainder successfully
     Verify List Page After Add The Todo List
 
 TC_03_Verify edit the todo list with remainder successfully
-    # [Tags]    Test
+    [Tags]    assignment
     [Documentation]    To verify the application can edit todo task succesfully
-    Open Test Application
+    Open App On Android
+    ...    ${ANDROID_PLATFORM_VERSION}
+    ...    ${PLATFORM}
+    ...    ${ANDROID_AUTOMATION_NAME}
+    ...    ${DEVICE_NAME}
+    ...    ${URL}
+    ...    ${APP_LOCATION}
     Verify List Page Before Add The Record
     Click Create Button
     Verify Add List Page
-    Enter The Todo    Todo2
+    Enter The Todo    Todo1
     Click Remainder Toggle
     Verify After Adding Page After Toggle Is On
     Select The Next Day
     Click The Next Button
-    Verify List Page After Add The Todo List
+    Click The Todo List    
+    Edit The Todo    Edit
+    Click The Next Button
+    Verify List Page After Edit The Todo List     Todo1Edit
 
 TC_04_Verify the application will display default text as Today when selecting the day that is in the past
-    # [Tags]    Test
     [Documentation]    To verify the application display default text as today when selecting the day that is in the past
-    Open Test Application
+    [Tags]    assignment
+    Open App On Android
+    ...    ${ANDROID_PLATFORM_VERSION}
+    ...    ${PLATFORM}
+    ...    ${ANDROID_AUTOMATION_NAME}
+    ...    ${DEVICE_NAME}
+    ...    ${URL}
+    ...    ${APP_LOCATION}
     Verify List Page Before Add The Record
     Click Create Button
     Verify Add List Page
-    Enter The Todo    Todo3
+    Enter The Todo    Todo1
     Click Remainder Toggle
     Verify After Adding Page After Toggle Is On
     Select The Previous Day
@@ -58,9 +85,15 @@ TC_04_Verify the application will display default text as Today when selecting t
     Verify List Page After Add The Todo List
 
 TC_05_Verify can't create the record when not filled title but click the next button
-    # [Tags]    Test
+    [Tags]    assignment
     [Documentation]    To verify the application will go back to the list page but not created any record when not filled the title
-    Open Test Application
+    Open App On Android
+    ...    ${ANDROID_PLATFORM_VERSION}
+    ...    ${PLATFORM}
+    ...    ${ANDROID_AUTOMATION_NAME}
+    ...    ${DEVICE_NAME}
+    ...    ${URL}
+    ...    ${APP_LOCATION}
     Verify List Page Before Add The Record
     Click Create Button
     Verify Add List Page
@@ -68,9 +101,15 @@ TC_05_Verify can't create the record when not filled title but click the next bu
     Verify After Adding The Record Case But Not Filled The Title
 
 TC_06_Verify Date And Time Picker
-    # [Tags]    Test
+   [Tags]    assignment
     [Documentation]    To verify the application will close the date picker
-    Open Test Application
+    Open App On Android
+    ...    ${ANDROID_PLATFORM_VERSION}
+    ...    ${PLATFORM}
+    ...    ${ANDROID_AUTOMATION_NAME}
+    ...    ${DEVICE_NAME}
+    ...    ${URL}
+    ...    ${APP_LOCATION}
     Verify List Page Before Add The Record
     Click Create Button
     Verify Add List Page
