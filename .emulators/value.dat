@@ -1,0 +1,9 @@
+[Pixel]
+tags=Android
+platformName=Android  
+platformVersion=13
+deviceName=emulator-5554
+automationName=UiAutomator2
+browsername=chrome
+url=http://127.0.0.1:4723/wd/hub
+udid=emulator-5554

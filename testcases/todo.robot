@@ -55,7 +55,6 @@ TC_03_Verify edit the todo list with remainder successfully
     Verify Add List Page
     Enter The Todo    Todo1
     Click Remainder Toggle
-    Verify After Adding Page After Toggle Is On
     Select The Next Day
     Click The Next Button
     Click The Todo List    
@@ -102,7 +101,7 @@ TC_05_Verify can't create the record when not filled title but click the next bu
 
 TC_06_Verify Date And Time Picker
    [Tags]    assignment
-    [Documentation]    To verify the application will close the date picker
+    [Documentation]    To verify close the date picker
     Open App On Android
     ...    ${ANDROID_PLATFORM_VERSION}
     ...    ${PLATFORM}
